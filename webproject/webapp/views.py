@@ -24,6 +24,7 @@ def add_book(request):
         img = request.FILES['img']
         book=Books(name=name,desc=desc,year=year,img=img)
         book.save()
+        return redirect('/')
     return render(request,'add.html')
 
 def update(request,id):
